@@ -1,0 +1,19 @@
+.header{
+   
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    img{
+        width: 200px;
+        height: 100px;
+    }
+    button{
+        color: white;
+        background-color: #e50914;
+        border: none ;
+        font-weight: bolder;
+        padding: 10px 15px;
+        border-radius: 2px;
+    }
+}
