@@ -1,5 +1,52 @@
 .netflix{
     width: 100%;
     height: 100vh;
-   
+    .nav{
+        position: fixed;
+        top: 0;
+     
+      
+    }
+   .hero{
+        width: 100% ;
+        height: 789px;
+        background: linear-gradient(#0000006d, #0000006d), url('../../assets/home.jpg');
+        background-size: cover;
+      
+        
+        
+       
+        .container{
+           
+            height: calc(100% - 102px);
+            display: flex;
+            align-items: center;
+            padding-left: 25px;
+           .logo{
+            
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+           }
+           img{
+            margin-bottom: 50px;
+           }
+           button{
+            margin-right: 25px;
+            padding: 7px 30px;
+            border:none;
+           }
+           .more{
+            background-color: rgba(109, 109, 119, 0.7);
+
+           
+           .buttom{
+            .more{
+                color: white;
+            }
+           }
+           
+        }
+
+   }}
 }

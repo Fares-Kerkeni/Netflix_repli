@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter,Route,Routes} from 'react-router-dom'
 import Login from './pages/Login'
 import Netflix from './pages/Netflix'
+import Player from './pages/Player'
 import Signup from './pages/Signup'
 const App = () => {
   return (
@@ -9,7 +10,9 @@ const App = () => {
     <Routes>
       <Route exact path='/login' element={<Login/>}></Route>
       <Route exact path='/signup' element={<Signup/>}></Route>
+      <Route exact path='/player' element={<Player/>}></Route>
       <Route exact path='/' element={<Netflix/>}></Route>
+
     </Routes>
   </BrowserRouter>
   )
