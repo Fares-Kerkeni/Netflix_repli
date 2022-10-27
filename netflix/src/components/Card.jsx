@@ -12,49 +12,72 @@ const Card = ({movieData, isLiked = false}) => {
     const [isHovered,setisHovered] = useState(false)
     const navigate = useNavigate();
     return (
-        <div className='card' onMouseEnter={()=>setisHovered(true)} onMouseLeave={()=>setisHovered(false)}>
-            <img src={`https://image.tmdb.org/t/p/w500${movieData.image}`}
-            alt="card" />
-            {
-             isHovered && (
-                <div className='hover'>
-                    <div className='img_video_container'>
-
-                    <img src={`https://image.tmdb.org/t/p/w500${movieData.image}`}
-                        alt="card" onClick={()=> navigate("/player")}/>
-                        <video src={video} autoPlay loop muted onClick={()=> navigate("/player")}/>
+        <div className="card" 
+            onMouseEnter={() => setisHovered(true)}
+            onMouseLeave={() => setisHovered(false)}
+        >
+        <img
+            src={`https://image.tmdb.org/t/p/w500${movieData.image}`}
+            alt="card"
+            onClick={() => navigate("/player")}
+        />
+        {isHovered && (
+            <div className="hover">
+                <div className="image-video-container">
+                    <img
+                        src={`https://image.tmdb.org/t/p/w500${movieData.image}`}
+                        alt="card"
+                        onClick={() => navigate("/player")}
+                    />
+                    <video
+                      src={video}
+                      autoPlay={true}
+                      loop
+                      muted
+                      onClick={() => navigate("/player")}
+                    />
+                </div>
+                <div className="info-container flex column">
+                    <h3 className="name" onClick={() => navigate("/player")}>
+                    {movieData.name}
+                    </h3>
+                    <div className="icons flex j-between">
+                    <div className="controls flex">
+                        <IoPlayCircleSharp
+                        title="Play"
+                        onClick={() => navigate("/player")}
+                        />
+                        <RiThumbUpFill title="Like" />
+                        <RiThumbDownFill title="Dislike" />
+                        {isLiked ? (
+                        <BsCheck
+                            title="Remove from List"
+                            
+                        />
+                        ) : (
+                        <AiOutlinePlus title="Add to my list"  />
+                        )}
                     </div>
-                <div className='info-container'></div>
-                <h3 className='name' onClick={()=> navigate("/player")}>{movieData.name}</h3>
-                <div className="icon">
-                    <IoPlayCircleSharp title='play' onClick={()=> navigate("/player")}/>
-                    <RiThumbUpFill title='Like'/>
-                    <RiThumbDownFill title='Dislike'/>
-                    {
-                        isLiked ? (
-                            <BsCheck title='Remove from list'/>
-                        ):(
-                            <AiOutlinePlus title='Add to my list'/>
-                        
-                    )}
                     <div className="info">
-                        <BiChevronDown title='more info'/>
+                        <BiChevronDown title="More Info" />
                     </div>
-                    <div className="genre">
-                        <ul>
-                            {movieData.genres.map((genre)=>{
-                                
-                            <li key={genre}>{genre}</li>
-
-                            })}
-                        </ul>
                     </div>
-
+                    <div className="genres flex">
+                    <ul className="flex">
+                        {movieData.genres.map((genre) => (
+                        <li>{genre}</li>
+                        ))}
+                    </ul>
+                    </div>
                 </div>
                 </div>
-             )   
-            }
-        </div>
+            )}
+            </div> 
+      
+     
+    
+      
+      
     );
 };
 

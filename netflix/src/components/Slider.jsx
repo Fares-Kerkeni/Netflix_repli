@@ -12,6 +12,7 @@ const Slider = ({movies}) => {
             <CardSlider title="Populaire on netflix " data={getMoviesFromRange(30, 40)}/>
             <CardSlider title="Action Movies" data={getMoviesFromRange(40, 50)}/>
             <CardSlider title="Epics" data={getMoviesFromRange(50, 60)}/>
+            
         </div>
     );
 };
